@@ -1,0 +1,91 @@
+---
+title: "Untitled"
+author: "MUKESH M"
+date: "2023-07-09"
+output: html_document
+---
+```{r}
+auto=data.frame(Auto)
+auto
+```
+```{r}
+
+summary(auto)
+```
+```{r}
+auto <- na.omit(auto)
+head(auto)
+```
+
+
+```{r}
+quantitative <- c("mpg", "displacement", "horsepower", "weight", "acceleration", "year")
+
+qualitative <- c("cylinders","origin", "name")
+```
+```{r}
+for(i in c(1,3,4,5,6,7)){
+print(range(Auto[,i]))  
+}
+
+
+```
+```{r}
+for(i in c(1,3,4,5,6,7)){
+  print(mean(Auto[,i]))
+}
+
+```
+```{r}
+
+for(i in c(1,3,4,5,6,7)){
+  print(sd(Auto[,i]))
+}
+```
+
+```{r}
+new<-Auto[-c(10:85),]
+
+new
+```
+```{r}
+for(i in c(1,3,4,5,6,7)){
+  print(range(new[,i]))
+}
+```
+
+```{r}
+
+for(i in c(1,3,4,5,6,7)){
+  print(mean(new[,i]))
+}
+
+
+
+```
+```{r}
+
+for(i in c(1,3,4,5,6,7)){
+  print(sd(new[,i]))
+}
+
+```
+
+```{r}
+pairs(auto)
+```
+```{r}
+plot(auto$acceleration,auto$weight)
+
+
+plot(auto$horsepower, auto$mpg)
+
+```
+
+ Suppose that we wish to predict gas mileage (mpg) on the basis of the other variables. Do your plots suggest that any of the other variables might be useful in predicting mpg? Justify your answer
+  
+  
+  
+  Answer: Yes, from these graphs we can see some variables have positive, and some have negative, relationships to mpg outcome. mpg and horsepower have a negative relationship to one another (when horsepower increases, mpg decreases) while year and mpg have a positive relationship with each other (as year increases mpg also increases).
+
+
